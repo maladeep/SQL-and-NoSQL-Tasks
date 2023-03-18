@@ -118,5 +118,6 @@ The managers of the company would like to determine, for each product, the numbe
 2.	Assuming that the data is too large to be processed in a centralized manner in a relational database, and that it is stored in an ordinary file, produce a decentralised solution which applies MapReduce to the data processing. Justify your decisions and all the steps of your solution. Use diagrams if required. 
 
 
+> More detail on report can be available on request. 
 
 
