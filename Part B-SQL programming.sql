@@ -12,7 +12,6 @@
 
 
 
-
 --The following statements create the DEPARTMENT table in Employee Database.
 CREATE TABLE DEPARTMENT
  (
@@ -163,10 +162,10 @@ FROM
 INNER JOIN PENSION_SCHEME PS ON E.SCHEME_ID=PS.SCHEME_ID 
 GROUP BY PS.NAME;
 
-
 --c)Give the total number of employees who are not managers but currently receive an annual salary of over ?35,000. 
 SELECT
-    E.EMP_ID 
+        COUNT(E.EMP_ID) TOTAL_NUMBER_OF_EMPLOYEE,
+        SD.FINISH_SALARY AS SALARY
 from 
     EMPLOYEE E 
 INNER JOIN SALARY_GRADE SD ON E.SALARY_CODE=SD.SALARY_CODE
@@ -178,8 +177,8 @@ where
                                     Employee 
                                 where 
                                     Manager IS NOT NULL 
-                                    );
-
+                                    )    
+GROUP BY SD.FINISH_SALARY;
 
 --d)List the id and name of each employee along with his/her manager?s name.
 SELECT 
@@ -189,4 +188,6 @@ SELECT
 FROM 
     EMPLOYEE E1 
 INNER JOIN EMPLOYEE E2 ON E1.MANAGER=E2.EMP_ID;
+
+
 
